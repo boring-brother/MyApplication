@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RemoteTouch</string>
+    <string name="accessibility_service_description">This accessibility service allows RemoteTouch to perform touch gestures on your device. It is required for the server mode to simulate touch events received from client devices.</string>
+</resources>
