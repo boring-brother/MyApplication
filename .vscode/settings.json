@@ -1,0 +1,12 @@
+{
+  "mcp.servers": {
+    "gitee": {
+      "type": "sse",
+      "url": "https://mcp.gitee.com/sse"
+    },
+    "github": {
+      "type": "sse",
+      "url": "https://mcp.github.com/sse"
+    }
+  }
+}

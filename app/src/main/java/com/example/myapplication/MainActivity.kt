@@ -36,13 +36,6 @@ class MainActivity : ComponentActivity() {
         
         preferencesRepository = PreferencesRepository(this)
         
-        lifecycleScope.launch {
-            val savedMode = preferencesRepository.getSelectedMode()
-            if (savedMode != null) {
-                navigateToMode(savedMode)
-            }
-        }
-        
         setContent {
             MyApplicationTheme {
                 ModeSelectScreen(
@@ -63,7 +56,6 @@ class MainActivity : ComponentActivity() {
             Constants.AppMode.CLIENT -> Intent(this, ClientActivity::class.java)
         }
         startActivity(intent)
-        finish()
     }
 }
 
