@@ -167,6 +167,8 @@ fun ServerScreen(
         "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$".toRegex()
     )
     
+    val canStart = hasValidIp && isAccessibilityEnabled
+    
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -350,7 +352,7 @@ fun ServerScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
-            enabled = hasValidIp && isAccessibilityEnabled && !isConnected,
+            enabled = canStart && !isConnected,
             colors = ButtonDefaults.buttonColors(
                 containerColor = if (isConnected) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary
             )
@@ -361,7 +363,7 @@ fun ServerScreen(
             )
         }
         
-        if (!hasValidIp || !isAccessibilityEnabled) {
+        if (!canStart) {
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(

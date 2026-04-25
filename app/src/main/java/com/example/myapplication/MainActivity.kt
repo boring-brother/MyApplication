@@ -56,6 +56,7 @@ class MainActivity : ComponentActivity() {
             Constants.AppMode.CLIENT -> Intent(this, ClientActivity::class.java)
         }
         startActivity(intent)
+        finish()
     }
 }
 
